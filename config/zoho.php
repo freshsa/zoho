@@ -9,7 +9,7 @@ return [
     | Zoho's Client id for OAuth process
     |
     */
-    'client_id' => env('ZOHO_CLIENT_ID', null),
+    'client_id'                 => env('ZOHO_CLIENT_ID', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ return [
     | Zoho's Client secret for OAuth process
     |
     */
-    'client_secret' => env('ZOHO_CLIENT_SECRET', null),
+    'client_secret'             => env('ZOHO_CLIENT_SECRET', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return [
     | Zoho client
     |
     */
-    'redirect_uri' => env('ZOHO_REDIRECT_URI', null),
+    'redirect_uri'              => env('ZOHO_REDIRECT_URI', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
     | Zoho's email address that will be used to interact with API
     |
     */
-    'current_user_email' => env('ZOHO_CURRENT_USER_EMAIL', null),
+    'current_user_email'        => env('ZOHO_CURRENT_USER_EMAIL', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return [
     | the file here
     |
     */
-    'token_persistence_path' => storage_path('app/zoho/oauth/tokens'),
+    'token_persistence_path'    => storage_path('app/zoho/oauth/tokens'),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
     | [`accounts.zoho.com`, `accounts.zoho.eu`, `accounts.zoho.com.cn`]
     |
     */
-    'accounts_url' => env('ZOHO_ACCOUNTS_URL', 'https://accounts.zoho.com'),
+    'accounts_url'              => env('ZOHO_ACCOUNTS_URL', 'https://accounts.zoho.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     | By default, the value is false
     |
     */
-    'sandbox' => env('ZOHO_SANDBOX', false),
+    'sandbox'                   => env('ZOHO_SANDBOX', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     | - www.zohoapis.com.cn
     |
     */
-    'api_base_url' => env('ZOHO_API_BASE_URL', 'www.zohoapis.com'),
+    'api_base_url'              => env('ZOHO_API_BASE_URL', 'www.zohoapis.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +117,7 @@ return [
     | Zoho API version
     |
     */
-    'api_version' => env('ZOHO_API_VERSION', 'v2'),
+    'api_version'               => env('ZOHO_API_VERSION', 'v2'),
 
     /*
     |--------------------------------------------------------------------------
@@ -128,7 +128,7 @@ return [
     | PHP SDK as of now.
     |
     */
-    'access_type' => env('ZOHO_ACCESS_TYPE', 'offline'),
+    'access_type'               => env('ZOHO_ACCESS_TYPE', 'offline'),
 
     /*
     |--------------------------------------------------------------------------
@@ -152,7 +152,7 @@ return [
     | this path according to your preferences and application design.
     |
     */
-    'path' => env('ZOHO_PATH', 'zoho'),
+    'path'                      => env('ZOHO_PATH', 'zoho'),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,5 +164,15 @@ return [
     | this path according to your preferences and application design.
     |
     */
-    'oauth_scope' => env('ZOHO_OAUTH_SCOPE', 'aaaserver.profile.READ,ZohoCRM.modules.ALL,ZohoCRM.settings.ALL'),
+    'oauth_scope'               => env('ZOHO_OAUTH_SCOPE', 'aaaserver.profile.READ,ZohoCRM.modules.ALL,ZohoCRM.settings.ALL'),
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Zoho Enabled
+    |--------------------------------------------------------------------------
+    |
+    | To specify zoho is enabled
+    |
+    */
+    'is_zoho_enabled'           => env('ZOHO_ENABLED', false),
 ];

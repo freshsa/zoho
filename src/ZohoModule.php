@@ -225,4 +225,46 @@ class ZohoModule
 
         return null;
     }
+
+    /**
+     * @param $recordId
+     * @param $dealParams
+     * @param array $details
+     * @return \zcrmsdk\crm\api\response\APIResponse
+     */
+    public function convert($recordId, $dealParams, $details = [])
+    {
+        $deal = [];
+        if (!empty($dealParams)) {
+            $deal = $this->rest->getRecordInstance('deals', null);
+            foreach ($dealParams as $key => $dealParam) {
+                $deal->setFieldValue($key, $dealParam);
+            }
+        }
+
+        return $this->getRecordInstance($recordId)->convert($deal, $details);
+    }
+
+    /**
+     * @return array
+     */
+    public function getAllFields()
+    {
+        return $this->moduleIns->getAllFields()->getData();
+    }
+
+    /**
+     * @param null $recordId
+     * @param array $data
+     * @return ZCRMRecord
+     */
+    public function prepareStatement($recordId = null, $data = [])
+    {
+        $recordInstance = $this->getRecordInstance($recordId);
+        foreach ($data as $key => $datum) {
+            $recordInstance->setFieldValue($key, $datum);
+        }
+
+        return $recordInstance;
+    }
 }
