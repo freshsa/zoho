@@ -40,6 +40,8 @@ class ZohoServiceProvider extends ServiceProvider
         if (!class_exists('Zoho')) {
             class_alias('Asciisd\Zoho\Zoho', 'Zoho');
         }
+
+        Zoho::isZohoEnabled();
     }
 
     /**
@@ -51,9 +53,9 @@ class ZohoServiceProvider extends ServiceProvider
     {
         if (Zoho::$registersRoutes) {
             Route::group([
-                'prefix' => config('zoho.path'),
+                'prefix'    => config('zoho.path'),
                 'namespace' => 'Asciisd\Zoho\Http\Controllers',
-                'as' => 'zoho.',
+                'as'        => 'zoho.',
             ], function () {
                 $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
             });
